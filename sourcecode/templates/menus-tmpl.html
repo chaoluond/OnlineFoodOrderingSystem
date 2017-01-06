@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="{{ base }}">
+  <title>ND Gourmand</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+ <link rel="stylesheet" href="mycss/main.css">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">ND Gourmand</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Restaurants</a></li>
+        <li><a href="#">Order Online</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+ 
+ <div class="container"> 
+  <div class="jumbotron">
+    <h1>Welcome to ND Gourmand Club!</h1>      
+    <p>This website will help you target your most desirable restaurants and delicisou food! </p>      
+    <a href="#" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-search"></span> Search</a>
+  </div>
+
+
+
+
+      <div class="page-header">
+        <h1>Menu List of {{rName}}</h1>
+      </div>
+      <div class="container-fluid">
+      <ul class="list-group restaurant-list no-gutter">
+	{% block content %}
+	{% set i = 0 %}
+	{% for menuID, menuName in data %}
+	{% if i == 0 %}
+	<div class = "row">
+	{% elif i % 2 == 0 %}
+	</div>
+	<div class = "row">
+	{% endif %}
+        <li class="list-group-item restaurant-list-item col-md-6">
+	    <a href="/restaurants/{{rID}}/menus/{{menuID}}">
+	    <h4 class="list-group-item-heading">
+              {{menuName}}
+            </h4>
+	    </a>
+	   
+	</li>
+	{% set i = i + 1 %}
+	{% endfor %}
+	{% endblock %}
+      </ul>
+      </div>
+
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="myjs/restaurants.js"></script>
+    <script src="myjs/categories.js"></script>
+</body>
+</html>
+

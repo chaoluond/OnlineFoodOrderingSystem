@@ -1,0 +1,102 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Test Log for /restaurants resource %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+200
+[[u'7009c6cc1083e4c6b3dd', u'Subway', u'41.70204300', u'-86.23764500', u'Lafortune Student Ctr', u'Notre Dame', u'IN', u'46556', u'http://www.subway.com/', 0.4309326020132202], [u'a2c367a73b6181fec216', u"O'Rourke's Public House", u'41.69264109', u'-86.23585938', u'1044 Angela Blvd.', u'South Bend', u'IN', u'46617', u'http://www.orourkespubhouse.com', 0.6321235012641562], [u'85cf71a488ac45e0012b', u'The Mark Dine & Tap', u'41.69177600', u'-86.23542500', u'1234 Eddy St.', u'South Bend', u'IN', u'46617', u'http://themarkdineandtap.com/', 0.7306166601732548], [u'ce682628b99cd9422e50', u'Linebacker Lounge', u'41.69419330', u'-86.22478008', u'1631 S. Bend Ave.', u'South Bend', u'IN', u'46617', u'http://www.backer-nd.com', 1.054909552242132], [u'f86eefdd5c83f1d31e5e', u'Starbucks', u'41.70569200', u'-86.24888300', u'217 South Dining Hall', u'Notre Dame', u'IN', u'46556', u'http://www.starbucks.com/', 1.3337391568887225], [u'e3f1400c66b37c410723', u'Club 23', u'41.68504000', u'-86.23784300', u'744 N. Notre Dame Ave.', u'South Bend', u'IN', u'46617', u'http://club-23.com', 1.4830165397048822], [u'55ea8e237866103a26ef', u'Legends of Notre Dame', u'41.70711900', u'-86.25133900', u'100 Legends', u'Notre Dame', u'IN', u'46556', u'http://www.legendsofnotredame.org/', 1.5921642194653527], [u'00dae7092df41d0f8df2', u'Mandarin House', u'41.69432400', u'-86.21752261', u'2104 Edison Rd.', u'South Bend', u'IN', u'46617', u'http://www.mandarinhousein.com', 1.6149631388460226], [u'4218edc2d112582bde38', u'Sunny Italy Cafe', u'41.68338635', u'-86.24484385', u'601 N. Niles Ave.', u'South Bend', u'IN', u'46617', u'http://sunnyitalycafe.com', 1.8087337912038048], [u'f98dc7678100784d08c2', u"ciao's", u'41.68266100', u'-86.24455000', u'501 North Niles Ave.', u'South Bend', u'IN', u'46617', u'http://www.ciaosrestaurant.com/', 1.8739356557032396], [u'0196cde7f90c65f47ab2', u'Burger King', u'41.71213900', u'-86.25014800', u'University Of Notre Dame', u'Notre Dame', u'IN', u'46556', u'http://www.bk.com/', 1.9238489440573783], [u'0559f40309a19b3949d5', u"Macri's Italian Bakery", u'41.67825400', u'-86.24427400', u'214 North Niles Ave.', u'South Bend', u'IN', u'46617', u'http://www.macrifamily.com/', 2.329802460188474], [u'73a2615c8f11cf22ac84', u'The Emporium', u'41.67603100', u'-86.24434400', u'121 S. Niles Ave.', u'South Bend', u'IN', u'46617', u'http://eastbankemporium.com', 2.5691477250870167], [u'24419e195104ad57ba86', u"Barnaby's", u'41.67529988', u'-86.24094428', u'713 E. Jefferson Blvd.', u'South Bend', u'IN', u'46617', u'http://www.southbendbarnabys.com', 2.590142920114679], [u'4a1ecd9a41ed6402b8ba', u"Sorin's", u'41.75663400', u'-86.23883200', u'1 Notre Dame Ave.', u'South Bend', u'IN', u'46556', u'http://morrisinn.nd.edu/dining/sorins/', 6.489898813910403]]
+
+200
+POST /restaurants     ...     Restaurants.POST
+POST /restaurants body:
+
+
+200
+GET /restaurants/{id=7009c6cc1083e4c6b3dd}   ...   RestaurantID.GET
+
+200
+PUT /restaurants/{id=7009c6cc1083e4c6b3dd}      ...     RestaurantID.PUT
+PUT /restaurants body:
+
+
+200
+DELETE /restaurants/{id=7009c6cc1083e4c6b3dd}   ...   RestaurantID.DELETE
+
+200
+[{u'href': u'restaurants/7009c6cc1083e4c6b3dd/menus/27/categories', u'name': u'Menu'}, {u'href': u'restaurants/7009c6cc1083e4c6b3dd/menus/28/categories', u'name': u'Breakfast'}, {u'href': u'restaurants/7009c6cc1083e4c6b3dd/menus/29/categories', u'name': u'Drinks'}]
+
+200
+POST /restaurants/{restID}/menus     ...     Menus.POST
+POST /restaurants/{restID}/menus body:
+
+
+200
+GET /restaurants/{restID=7009c6cc1083e4c6b3dd}/menus/{menuID=27}  ...   MenuID.GET
+
+200
+PUT /restaurants/{restID=7009c6cc1083e4c6b3dd}/menus/{menuID=27}   ...   MenuID.PUT
+PUT /restaurants/{restID=%s}/menus/{menuID=%s} body:
+
+
+200
+DELETE /restaurants/{restID=7009c6cc1083e4c6b3dd}/menus/{menuID=27}   ...   MenuID.DELETE
+
+200
+[{u'href': u'restaurants/7009c6cc1083e4c6b3dd/menus/27/categories/1/items', u'name': u'All Sandwiches'}, {u'href': u'restaurants/7009c6cc1083e4c6b3dd/menus/27/categories/2/items', u'name': u'$5 Footlongs'}, {u'href': u'restaurants/7009c6cc1083e4c6b3dd/menus/27/categories/3/items', u'name': u'Fresh Fit Choices'}, {u'href': u'restaurants/7009c6cc1083e4c6b3dd/menus/27/categories/4/items', u'name': u'Featured Products'}, {u'href': u'restaurants/7009c6cc1083e4c6b3dd/menus/27/categories/5/items', u'name': u'Salad'}, {u'href': u'restaurants/7009c6cc1083e4c6b3dd/menus/27/categories/6/items', u'name': u'Fresh Fit for Kids'}, {u'href': u'restaurants/7009c6cc1083e4c6b3dd/menus/27/categories/7/items', u'name': u'Sides'}, {u'href': u'restaurants/7009c6cc1083e4c6b3dd/menus/27/categories/8/items', u'name': u'Extras'}]
+
+200
+POST /restaurants/{restID=7009c6cc1083e4c6b3dd}/menus/{menuID=27}/categories     ...     Categories.POST
+POST /restaurants/{restID=7009c6cc1083e4c6b3dd}/menus/{menuID=27}/categories body:
+
+
+200
+GET /restaurants/{restID=7009c6cc1083e4c6b3dd}/menus/{menuID=27}/categories/{catID=2}  ...   CategoryID.GET
+
+200
+PUT /restaurants/{restID=7009c6cc1083e4c6b3dd}/menus/{menuID=27}/categories/{catID=2}   ...   CategoryID.PUT
+PUT /restaurants/{restID=%s}/menus/{menuID=%s}/categories/{catID=%s} body:
+
+
+200
+DELETE /restaurants/{restID=7009c6cc1083e4c6b3dd}/menus/{menuID=27}/categories/{catID=2}   ...   CategoryID.DELETE
+
+200
+[{u'price': u'14.99', u'href': u'/restaurants/7009c6cc1083e4c6b3dd/menus/27/categories/2/items/1165', u'name': u'B.L.T.', u'description': u'The sub that proves great things come in threes. In this case, those three things happen to be crisp'}, {u'price': u'10.99', u'href': u'/restaurants/7009c6cc1083e4c6b3dd/menus/27/categories/2/items/1166', u'name': u'Black Forest Ham', u'description': u'Simply delicious. This flavorful sandwich is packed w/ lean Black Forest ham & served on your favori'}, {u'price': u'9.99', u'href': u'/restaurants/7009c6cc1083e4c6b3dd/menus/27/categories/2/items/1167', u'name': u'Cold Cut Combo', u'description': u"Can't decide what kind of meat you want? Get them all. The Cold Cut Combo is stacked w/ turkey-based"}, {u'price': u'8.99', u'href': u'/restaurants/7009c6cc1083e4c6b3dd/menus/27/categories/2/items/1168', u'name': u'Egg & Cheese', u'description': u'A classic for a reason. Our egg & cheese is simply delicious. Enjoy a fluffy egg omelet w/ melted ch'}, {u'price': u'15.99', u'href': u'/restaurants/7009c6cc1083e4c6b3dd/menus/27/categories/2/items/1169', u'name': u'Meatball Marinara', u'description': u"We take Italian style meatballs, drench them in mangialicious marinara sauce, & then serve 'em on yo"}, {u'price': u'9.99', u'href': u'/restaurants/7009c6cc1083e4c6b3dd/menus/27/categories/2/items/1170', u'name': u'Veggie Delite', u'description': u'Crispy, crunchy & classically delicious. The Veggie Delite is tangible proof that a sandwich can be '}]
+
+200
+POST /restaurants/{restID=7009c6cc1083e4c6b3dd}/menus/{menuID=27}/categories/{catID=2}/items     ...     Items.POST
+POST /restaurants/{restID=7009c6cc1083e4c6b3dd}/menus/{menuID=27}/categories/{catID=2}items body:
+
+
+200
+GET /restaurants/{restID=7009c6cc1083e4c6b3dd}/menus/{menuID=27}/categories/{cateD=2}/items/{itemID=1149}   ...   ItemID.GET
+
+200
+PUT /restaurants/{restID=7009c6cc1083e4c6b3dd}/menus/{menuId=27}/categories/{catID=2}/items/{itemID=1149}   ...     ItemID.PUT
+PUT /restaurants/{restID=7009c6cc1083e4c6b3dd}/menus/{menuID=27}/categories/{catID=2}/items/{itemID=1149} body:
+
+
+200
+DELETE /restaurants/{restID=7009c6cc1083e4c6b3dd}/menus/{menuID=27}/categories/{catID=2}/items/{itemID=1149}   ...   ItemID.DELETE
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Test Log for /orders resource %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+200
+[{u'href': u'orders/1/orderitems', u'userID': 1, u'payment': 0}, {u'error': []}]
+200
+{"orderID": 1, "error": []}
+200
+[{u'itemID': 1, u'quantity': 10}, {u'error': []}]
+200
+Order with orderID=1 has been sucessfully deleted
+{'error' : []}
+200
+{u'errors': [], u'orderitemID': 1, u'quantity': 10}
+200
+{u'errors': []}
+200
+{u'errors': [{u'message': u"Expected integer 'quantity' of items in order as JSON input", u'code': 9003}]}
+
